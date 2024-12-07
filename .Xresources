@@ -1,0 +1,14 @@
+*vt100.background:     #212121
+*vt100.foreground:     #80FF80
+*vt100.faceName:       xft:BlexMonoNerdFontMono-Regular:size=14:antialis=true:unscaled=true
+*termName:             xterm-256color
+*internalBorder:       0
+
+xterm*VT100.Translations: #override \
+    Ctrl <Key> minus: smaller-vt-font() \n\
+    Ctrl <Key> plus: larger-vt-font() \n\
+    Ctrl <Key> 0: set-vt-font(d) \n\
+    Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
+    Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
