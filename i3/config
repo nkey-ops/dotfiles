@@ -187,9 +187,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+        # status_command i3status
+# }
 
 # defaults
 # class                 border  backgr. text    indicator child_border
@@ -200,10 +200,13 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-bindsym $mod+i exec "gnome-screenshot -f ~/1.png"
+bindsym $mod+Shift+i exec "gnome-screenshot --area -f ~/1.png"
+bindsym $mod+i exec "gnome-screenshot -i -f ~/1.png"
+
 bindsym $mod+Shift+p move scratchpad 
 bindsym $mod+p scratchpad show
 bindsym $mod+b exec brave-browser
 
 for_window [instance="__scratchpad"] move scratchpad 
 exec --no-startup-id i3-sensible-terminal -name __scratchpad
+exec_always --no-startup-id ~/.config/polybar/launch.sh
