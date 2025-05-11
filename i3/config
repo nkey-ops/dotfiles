@@ -99,7 +99,9 @@ bindsym $mod+c focus child
 bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 
 # read 1 character and go to the window with the character
-bindsym $mod+g exec ~/.config/i3/go_to_mark_in_fullscreen.sh
+bindsym $mod+y exec ~/.config/i3/go_to_mark_in_fullscreen.sh
+# read 1 character and go to the window with the character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 show_marks yes
 # downt switch to window out of the containter
@@ -208,7 +210,7 @@ bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 bindsym $mod+b exec brave-browser
 
-exec --no-startup-id feh --bg-center ~/Downloads/all.png
+exec_always --no-startup-id feh --bg-center ~/Downloads/all.png
 
 for_window [instance="__scratchpad"] move scratchpad 
 exec --no-startup-id i3-sensible-terminal -name __scratchpad
