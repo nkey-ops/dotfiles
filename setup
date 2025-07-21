@@ -1,0 +1,66 @@
+sudo apt update
+sudo apt upgrade
+
+# restart
+
+# guest additions
+sudo apt install bzip2 gcc make perl
+# install guest addtions from and insert
+# https://download.virtualbox.org/virtualbox/7.1.12/VBoxGuestAdditions_7.1.12.iso
+sudo /media/local/VBox_GAs_*/VBoxLinuxAdditions.run
+# make sure to set high screen memory 
+
+# i3
+sudo apt install polybar
+sudo apt install i3
+
+# dotfiles
+git clone git@github.com:nkey-ops/dotfiles.git
+ln -s ~/.config/dotfiles/nvim ~/.config/nvim
+ln -s ~/.config/dotfiles/polybar ~/.config/polybar
+ln -s ~/.config/dotfiles/i3 ~/.config/i3
+ln -s ~/.config/dotfiles/.Xresources ~/.Xresources
+ln -s ~/.config/dotfiles/.bash_aliases ~/.bash_aliases
+ln -s ~/.config/dotfiles/.bash_profile ~/.bash_profile
+
+sudo apt install xterm 
+
+# neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
+sudo apt install luarocks
+## treesitter
+sudo apt install npm
+sudo npm install -g tree-sitter-cli
+cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim/ && make
+## telescope
+sudo apt-get install ripgrep
+sudo apt install fd-find
+
+mkdir ~/table/notes/ -p
+
+# java
+sudo apt install openjdk-21-source 
+
+# maven 
+cd /tmp && \
+wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz -O apache-maven.tar.gz && \ 
+tar xzvf apache-maven.tar.gz && \
+mv apache-maven-3.9.11 ~/apache-maven
+
+# brave
+sudo apt install curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+sud ocurl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
+sudo apt update
+sudo apt install brave-browser
+
+# github
+ssh-keygen -t ed25519 -C "terrythebear746@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+sudo apt install git
+
+sudo apt install xclip gnome-screenshot
+
