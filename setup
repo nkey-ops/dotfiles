@@ -1,6 +1,8 @@
 sudo apt update
 sudo apt upgrade
 
+sudo apt install xclip gnome-screenshot git 
+
 # restart
 
 # guest additions
@@ -38,6 +40,23 @@ cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim/ && make
 sudo apt-get install ripgrep
 sudo apt install fd-find
 
+cd ~/.local/share/nvim/lazy/telescope.nvim/ && \
+git remote add my-origin git@github.com:nkey-ops/telescope.nvim.git && \
+git pull my-origin dops && \
+git switch dops
+
+## rest-nvim
+cd ~/.local/share/nvim/lazy/rest.nvim/ && \
+git remote add my-origin git@github.com:nkey-ops/rest.nvim.git && \
+git pull my-origin dops && \
+git switch dops
+
+## nvim-cmp
+cd ~/.local/share/nvim/lazy/nvim-cmp/  && \
+git remote add my-origin git@github.com:nkey-ops/nvim-cmp.git && \
+git pull my-origin dops && \
+git switch dops
+
 mkdir ~/table/notes/ -p
 
 # java
@@ -60,7 +79,5 @@ sudo apt install brave-browser
 ssh-keygen -t ed25519 -C "terrythebear746@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
-sudo apt install git
 
-sudo apt install xclip gnome-screenshot
 
