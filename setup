@@ -50,6 +50,7 @@ cd ~/.local/share/nvim/lazy/rest.nvim/ && \
 git remote add my-origin git@github.com:nkey-ops/rest.nvim.git && \
 git pull my-origin dops && \
 git switch dops
+sudo apt tidy
 
 ## nvim-cmp
 cd ~/.local/share/nvim/lazy/nvim-cmp/  && \
@@ -81,3 +82,4 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
 
+sudo npm install -g @google/gemini-cli
