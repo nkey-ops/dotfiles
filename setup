@@ -83,3 +83,5 @@ ssh-add ~/.ssh/id_ed25519
 
 
 sudo npm install -g @google/gemini-cli
+sudo apt install tree
+sudo apt install gnome-screenshot
