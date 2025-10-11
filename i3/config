@@ -210,9 +210,13 @@ bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 bindsym $mod+b exec brave-browser
 
-exec_always --no-startup-id feh --bg-center ~/Downloads/all.png
+exec_always --no-startup-id feh --bg-fill -g +0+135 ~/Downloads/75181375_p0_master1200.jpg
+# feh --bg-fill ~/Downloads/Black\ Wallpaper\ Desktop\ Windows.jpg 
 
 for_window [instance="__scratchpad"] move scratchpad 
 exec --no-startup-id i3-sensible-terminal -name __scratchpad
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+exec_always --no-startup-id "setxkbmap -layout us,cz"
+exec_always --no-startup-id "setxkbmap -option 'grp:win_space_toggle'"
