@@ -1,8 +1,9 @@
 *vt100.background:     #212121
 *vt100.foreground:     #80FF80
-*vt100.faceName:       xft:BlexMonoNerdFontMono-Regular:size=12
+*vt100.faceName:       xft:OpenDyslexicMNerdFontMono-Regular:size=14
 *termName:             xterm-256color
 *internalBorder:       0
+! *cursorColor: #
 
 xterm*VT100.Translations: #override \n\
     Ctrl <Key> minus: smaller-vt-font() \n\
@@ -12,6 +13,7 @@ xterm*VT100.Translations: #override \n\
     Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
     Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+    Ctrl Shift <Key>+: exec-formatted("xdg-open '%t'", PRIMARY) 
 
 ! Setting transparency and background                                                                                                                                       
 ! URxvt.depth:          32
