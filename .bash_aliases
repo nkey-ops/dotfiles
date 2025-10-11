@@ -7,6 +7,7 @@ alias javad="java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=
 alias mvng="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5" 
 alias mcc="mvn clean compile" 
 alias mprg="mvn dependency:purge-local-repository -DmanualInclude="
+alias mdt="mvn dependency:tree -Dverbose"
 
 function mrj () { 
     mvn -q -e exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="$1" -Dexec.args="$2 $3 $4 $5 $6 $7 $8"; 
@@ -34,10 +35,10 @@ function pos() {
 }
 function mys() {
     com="$@"
-    mysql -uroot -ppassword_mysql "$com"
+    mysql -uuser -p$MYSQL_PASS "$com"
 }
 
-alias n="nvim"
+alias n="chmod u+x ~/Downloads/nvim-linux-x86_64.appimage && ~/Downloads/nvim-linux-x86_64.appimage"
 alias e="~/MyEclipse/myeclipse"
 alias sts="~/Downloads/sts-4.31.0.RELEASE/SpringToolSuite4"
 
