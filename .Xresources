@@ -4,6 +4,7 @@
 *termName:             xterm-256color
 *internalBorder:       0
 ! *cursorColor: #
+*metaSendsEscape: true
 
 xterm*VT100.Translations: #override \n\
     Ctrl <Key> minus: smaller-vt-font() \n\
