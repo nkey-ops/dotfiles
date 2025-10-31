@@ -6,8 +6,10 @@ alias java21="export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64"
 alias javad="java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8000"
 alias mvng="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5" 
 alias mcc="mvn clean compile" 
+alias mrr="mvn resources:resources" 
 alias mprg="mvn dependency:purge-local-repository -DmanualInclude="
 alias mdt="mvn dependency:tree -Dverbose"
+alias mjr="mvn jetty:run" 
 
 function mrj () { 
     mvn -q -e exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="$1" -Dexec.args="$2 $3 $4 $5 $6 $7 $8"; 
